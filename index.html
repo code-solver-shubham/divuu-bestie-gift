@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>For My Bestiee Divuu ✨</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --pink:#ff7eb6;
+    --rose:#ff4f91;
+    --purple:#9c7cff;
+    --cream:#fff5e8;
+    --dark:#080612;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+body{
+    font-family:Georgia,"Times New Roman",serif;
+    background:
+        radial-gradient(circle at 50% 20%,#21153b 0%,#0b0715 45%,#030207 100%);
+    color:white;
+    min-height:100vh;
+}
+
+/* =========================
+   STAR FIELD
+========================= */
+
+#stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.2;transform:scale(.7)}
+    50%{opacity:1;transform:scale(1.5)}
+}
+
+/* =========================
+   MOON
+========================= */
+
+.moon{
+    position:fixed;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 30%,#fff,#f5e8ff 55%,#d6c4ef);
+    box-shadow:
+      0 0 40px rgba(255,235,255,.35),
+      0 0 120px rgba(191,157,255,.16);
+    top:-65px;
+    right:-45px;
+    opacity:.9;
+    z-index:0;
+}
+
+.moon:after{
+    content:"";
+    position:absolute;
+    inset:20px;
+    border-radius:50%;
+    background:rgba(160,135,180,.09);
+    box-shadow:
+      45px 20px 0 -5px rgba(120,100,150,.12),
+      15px 65px 0 -8px rgba(120,100,150,.1);
+}
+
+/* =========================
+   APP
+========================= */
+
+#app{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+}
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen{
+    min-height:100vh;
+    width:100%;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    padding:25px;
+    text-align:center;
+}
+
+.screen.active{
+    display:flex;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.kicker{
+    letter-spacing:5px;
+    font-size:11px;
+    opacity:.65;
+    margin-bottom:20px;
+    animation:fadeUp 1.2s both;
+}
+
+.intro-title{
+    font-size:clamp(38px,11vw,78px);
+    line-height:.95;
+    font-weight:400;
+    text-shadow:
+        0 0 20px rgba(255,126,182,.3);
+    animation:titleIn 1.4s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.intro-title span{
+    color:#ff91c5;
+}
+
+.subtitle{
+    max-width:450px;
+    margin:25px auto 35px;
+    font-size:15px;
+    line-height:1.7;
+    opacity:.75;
+    animation:fadeUp 1.5s .3s both;
+}
+
+.enter-btn{
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.07);
+    color:white;
+    padding:15px 28px;
+    border-radius:50px;
+    cursor:pointer;
+    backdrop-filter:blur(15px);
+    font-family:inherit;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:.3s;
+    animation:fadeUp 1.5s .5s both;
+}
+
+.enter-btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:rgba(255,126,182,.16);
+    box-shadow:0 0 30px rgba(255,126,182,.25);
+}
+
+@keyframes titleIn{
+    from{
+        opacity:0;
+        transform:translateY(35px) scale(.95);
+        filter:blur(10px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+        filter:none;
+    }
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:none}
+}
+
+/* =========================
+   GIFT BOX
+========================= */
+
+.gift-area{
+    position:relative;
+    width:240px;
+    height:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:20px auto;
+}
+
+.gift-glow{
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,105,171,.18);
+    filter:blur(35px);
+    animation:pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow{
+    0%,100%{transform:scale(.85);opacity:.5}
+    50%{transform:scale(1.2);opacity:1}
+}
+
+.gift{
+    position:relative;
+    width:150px;
+    height:120px;
+    cursor:pointer;
+    transform-style:preserve-3d;
+    animation:floatGift 3s ease-in-out infinite;
+}
+
+@keyframes floatGift{
+    0%,100%{transform:translateY(0) rotate(-1deg)}
+    50%{transform:translateY(-13px) rotate(1deg)}
+}
+
+.box{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:150px;
+    height:90px;
+    background:linear-gradient(135deg,#a72f68,#5d1946);
+    border-radius:4px 4px 12px 12px;
+    box-shadow:
+        inset 8px 0 rgba(255,255,255,.08),
+        0 25px 50px rgba(0,0,0,.5);
+}
+
+.box:after{
+    content:"";
+    position:absolute;
+    left:64px;
+    top:0;
+    width:22px;
+    height:90px;
+    background:linear-gradient(90deg,#ffd0e7,#ff75af,#d73c7e);
+}
+
+.lid{
+    position:absolute;
+    left:-8px;
+    top:5px;
+    width:166px;
+    height:35px;
+    border-radius:7px;
+    background:linear-gradient(135deg,#d94a91,#752056);
+    transform-origin:left bottom;
+    z-index:4;
+    transition:1s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 10px 20px rgba(0,0,0,.35);
+}
+
+.lid:after{
+    content:"";
+    position:absolute;
+    left:72px;
+    top:0;
+    width:22px;
+    height:35px;
+    background:#ffb1d2;
+}
+
+.gift.opened .lid{
+    transform:rotate(-38deg) translate(-5px,-20px);
+}
+
+.ribbon-v{
+    position:absolute;
+    width:22px;
+    height:120px;
+    left:64px;
+    top:0;
+    background:linear-gradient(90deg,#ffb3d4,#ff5d9e,#d73678);
+    z-index:3;
+}
+
+.bow{
+    position:absolute;
+    top:-25px;
+    left:57px;
+    width:36px;
+    height:30px;
+    z-index:6;
+}
+
+.bow:before,
+.bow:after{
+    content:"";
+    position:absolute;
+    width:38px;
+    height:25px;
+    border:7px solid #ff7db4;
+    border-radius:50% 50% 40% 50%;
+}
+
+.bow:before{
+    transform:rotate(30deg);
+    left:-27px;
+}
+
+.bow:after{
+    transform:rotate(-30deg);
+    left:24px;
+}
+
+/* =========================
+   MAIN GIFT SCREEN
+========================= */
+
+.section-title{
+    font-size:clamp(27px,7vw,48px);
+    font-weight:400;
+    margin-bottom:8px;
+}
+
+.section-title span{
+    color:#ff86bb;
+}
+
+.section-desc{
+    font-size:13px;
+    opacity:.65;
+    margin-bottom:15px;
+}
+
+.progress{
+    font-size:12px;
+    letter-spacing:2px;
+    opacity:.65;
+    margin-bottom:20px;
+}
+
+/* =========================
+   ENVELOPE AREA
+========================= */
+
+.envelope-area{
+    width:min(850px,100%);
+    min-height:430px;
+    position:relative;
+    margin:auto;
+}
+
+.envelope{
+    position:absolute;
+    width:110px;
+    height:76px;
+    background:linear-gradient(145deg,#fff4e8,#ead7ca);
+    border-radius:5px;
+    cursor:pointer;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35),
+        0 0 0 1px rgba(255,255,255,.15);
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        opacity .4s;
+    transform-origin:center;
+}
+
+.envelope:hover{
+    transform:translateY(-10px) rotate(0deg) scale(1.07)!important;
+    box-shadow:0 20px 40px rgba(255,120,180,.22);
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(135deg,transparent 49%,#d6c1b4 50%,transparent 52%),
+      linear-gradient(225deg,transparent 49%,#d6c1b4 50%,transparent 52%);
+    opacity:.8;
+}
+
+.envelope:after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:48%;
+    background:#f6e5da;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top;
+    transition:.6s;
+    z-index:3;
+}
+
+.envelope.opened{
+    opacity:.25;
+    pointer-events:none;
+    transform:scale(.65)!important;
+}
+
+.envelope-number{
+    position:absolute;
+    z-index:5;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#7c3d60;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.envelope-label{
+    position:absolute;
+    top:83px;
+    width:130%;
+    left:-15%;
+    font-size:10px;
+    color:white;
+    opacity:.55;
+    pointer-events:none;
+}
+
+.e1{left:7%;top:15%;transform:rotate(-8deg)}
+.e2{left:28%;top:3%;transform:rotate(6deg)}
+.e3{left:53%;top:11%;transform:rotate(-5deg)}
+.e4{right:7%;top:18%;transform:rotate(9deg)}
+.e5{left:13%;top:48%;transform:rotate(5deg)}
+.e6{left:39%;top:35%;transform:rotate(-4deg)}
+.e7{right:13%;top:49%;transform:rotate(-7deg)}
+.e8{left:3%;bottom:2%;transform:rotate(8deg)}
+.e9{left:28%;bottom:5%;transform:rotate(-5deg)}
+.e10{left:53%;bottom:3%;transform:rotate(6deg)}
+.e11{right:3%;bottom:4%;transform:rotate(-8deg)}
+.e12{left:18%;top:29%;transform:rotate(-11deg)}
+.e13{right:22%;top:28%;transform:rotate(10deg)}
+
+/* =========================
+   LETTER MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(3,2,8,.8);
+    backdrop-filter:blur(18px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:50;
+}
+
+.modal.show{
+    display:flex;
+    animation:modalIn .45s both;
+}
+
+@keyframes modalIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+.letter{
+    position:relative;
+    width:min(570px,100%);
+    max-height:88vh;
+    overflow:auto;
+    background:
+      linear-gradient(rgba(255,248,237,.97),rgba(250,234,218,.97));
+    color:#392331;
+    border-radius:5px;
+    padding:40px 28px 35px;
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7),
+        0 0 50px rgba(255,130,180,.13);
+    transform:rotate(-1deg) scale(.8);
+    animation:letterIn .65s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes letterIn{
+    to{transform:rotate(0) scale(1)}
+}
+
+.letter:before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px dashed rgba(100,55,70,.2);
+    pointer-events:none;
+}
+
+.close{
+    position:absolute;
+    right:15px;
+    top:12px;
+    width:35px;
+    height:35px;
+    border:0;
+    border-radius:50%;
+    background:#ead3c8;
+    color:#54263d;
+    cursor:pointer;
+    font-size:17px;
+}
+
+.letter-number{
+    font-size:11px;
+    letter-spacing:4px;
+    opacity:.55;
+    margin-bottom:15px;
+}
+
+.letter-title{
+    font-size:28px;
+    margin-bottom:20px;
+    font-weight:400;
+}
+
+.letter-text{
+    font-size:16px;
+    line-height:1.9;
+    white-space:pre-line;
+}
+
+.signature{
+    margin-top:30px;
+    font-style:italic;
+    font-size:14px;
+}
+
+.special{
+    margin-top:25px;
+    padding:14px;
+    border-radius:10px;
+    background:rgba(255,130,180,.08);
+    font-size:13px;
+}
+
+/* =========================
+   CONSTELLATION
+========================= */
+
+.constellation{
+    position:relative;
+    width:min(500px,90vw);
+    height:330px;
+    margin:20px auto;
+}
+
+.constellation svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+.constellation path{
+    fill:none;
+    stroke:rgba(255,145,196,.35);
+    stroke-width:1;
+    stroke-dasharray:5 8;
+}
+
+.cstar{
+    position:absolute;
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 15px #ff9dcc,0 0 35px #ff6eaa;
+    opacity:0;
+    transform:scale(0);
+    transition:.7s;
+}
+
+.cstar.on{
+    opacity:1;
+    transform:scale(1);
+}
+
+.cs1{left:50%;top:5%}
+.cs2{left:31%;top:15%}
+.cs3{left:69%;top:15%}
+.cs4{left:18%;top:34%}
+.cs5{left:82%;top:34%}
+.cs6{left:28%;top:50%}
+.cs7{left:72%;top:50%}
+.cs8{left:38%;top:67%}
+.cs9{left:62%;top:67%}
+.cs10{left:44%;top:83%}
+.cs11{left:56%;top:83%}
+.cs12{left:48%;top:93%}
+.cs13{left:52%;top:93%}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-title{
+    font-size:clamp(35px,10vw,70px);
+    font-weight:400;
+    line-height:1.05;
+}
+
+.final-title span{
+    color:#ff87bc;
+}
+
+.final-text{
+    max-width:520px;
+    line-height:1.9;
+    font-size:15px;
+    opacity:.75;
+    margin:25px 0;
+}
+
+.signature-big{
+    font-size:22px;
+    font-style:italic;
+    color:#ff9bc6;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(20,13,30,.7);
+    color:white;
+    backdrop-filter:blur(15px);
+    z-index:100;
+    cursor:pointer;
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle{
+    position:fixed;
+    pointer-events:none;
+    z-index:70;
+    animation:particleFly 1.5s ease-out forwards;
+}
+
+@keyframes particleFly{
+    from{
+        opacity:1;
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        opacity:0;
+        transform:translate(var(--x),var(--y)) scale(.2) rotate(180deg);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .moon{
+        width:130px;
+        height:130px;
+        right:-50px;
+        top:-45px;
+    }
+
+    .screen{
+        padding:22px 15px;
+    }
+
+    .envelope-area{
+        min-height:510px;
+        transform:scale(.92);
+    }
+
+    .envelope{
+        width:88px;
+        height:62px;
+    }
+
+    .envelope-label{
+        top:68px;
+        font-size:8px;
+    }
+
+    .e1{left:2%;top:12%}
+    .e2{left:29%;top:3%}
+    .e3{left:57%;top:9%}
+    .e4{right:1%;top:17%}
+    .e5{left:7%;top:44%}
+    .e6{left:39%;top:32%}
+    .e7{right:6%;top:46%}
+    .e8{left:0;bottom:4%}
+    .e9{left:29%;bottom:1%}
+    .e10{left:58%;bottom:3%}
+    .e11{right:0;bottom:7%}
+    .e12{left:13%;top:28%}
+    .e13{right:16%;top:27%}
+
+    .letter{
+        padding:34px 22px 28px;
+    }
+
+    .letter-title{
+        font-size:24px;
+    }
+
+    .letter-text{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<div class="moon"></div>
+
+<div id="app">
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section id="intro" class="screen active">
+
+    <div class="kicker">
+        A LITTLE SOMETHING FOR SOMEONE SPECIAL
+    </div>
+
+    <h1 class="intro-title">
+        For My<br>
+        <span>Bestiee</span> ✨
+    </h1>
+
+    <p class="subtitle">
+        Not a big gift.<br>
+        Just 13 tiny reasons why having you around
+        makes life a little more fun.
+    </p>
+
+    <button class="enter-btn" onclick="enterGift()">
+        OPEN YOUR LITTLE GIFT ✨
+    </button>
+
+</section>
+
+
+<!-- =========================
+     GIFT BOX
+========================= -->
+
+<section id="boxScreen" class="screen">
+
+    <div class="kicker">PRIVATE LITTLE PACKAGE</div>
+
+    <h2 class="section-title">
+        Hey <span>Divuu</span> 💌
+    </h2>
+
+    <p class="section-desc">
+        There's something inside.
+    </p>
+
+    <div class="gift-area">
+
+        <div class="gift-glow"></div>
+
+        <div class="gift" id="gift" onclick="openGiftBox()">
+
+            <div class="bow"></div>
+
+            <div class="lid"></div>
+
+            <div class="box"></div>
+
+            <div class="ribbon-v"></div>
+
+        </div>
+
+    </div>
+
+    <p class="section-desc">
+        Tap the box 👆
+    </p>
+
+</section>
+
+
+<!-- =========================
+     ENVELOPES
+========================= -->
+
+<section id="reasonsScreen" class="screen">
+
+    <div class="kicker">A LITTLE COLLECTION OF MEMORIES</div>
+
+    <h2 class="section-title">
+        13 Little <span>Reasons</span> 💌
+    </h2>
+
+    <p class="section-desc">
+        Open them one by one.
+    </p>
+
+    <div class="progress">
+        <span id="counter">0</span> / 13 OPENED
+    </div>
+
+    <div class="envelope-area">
+
+        <div class="envelope e1" onclick="openReason(1,this)">
+            <span class="envelope-number">01</span>
+            <span class="envelope-label">Respect</span>
+        </div>
+
+        <div class="envelope e2" onclick="openReason(2,this)">
+            <span class="envelope-number">02</span>
+            <span class="envelope-label">Bachpana</span>
+        </div>
+
+        <div class="envelope e3" onclick="openReason(3,this)">
+            <span class="envelope-number">03</span>
+            <span class="envelope-label">Gussa 😂</span>
+        </div>
+
+        <div class="envelope e4" onclick="openReason(4,this)">
+            <span class="envelope-number">04</span>
+            <span class="envelope-label">Smile</span>
+        </div>
+
+        <div class="envelope e5" onclick="openReason(5,this)">
+            <span class="envelope-number">05</span>
+            <span class="envelope-label">Pagalpanti</span>
+        </div>
+
+        <div class="envelope e6" onclick="openReason(6,this)">
+            <span class="envelope-number">06</span>
+            <span class="envelope-label">4 AM Talks</span>
+        </div>
+
+        <div class="envelope e7" onclick="openReason(7,this)">
+            <span class="envelope-number">07</span>
+            <span class="envelope-label">Care</span>
+        </div>
+
+        <div class="envelope e8" onclick="openReason(8,this)">
+            <span class="envelope-number">08</span>
+            <span class="envelope-label">Never Give Up</span>
+        </div>
+
+        <div class="envelope e9" onclick="openReason(9,this)">
+            <span class="envelope-number">09</span>
+            <span class="envelope-label">Understanding</span>
+        </div>
+
+        <div class="envelope e10" onclick="openReason(10,this)">
+            <span class="envelope-number">10</span>
+            <span class="envelope-label">Nicknames 😂</span>
+        </div>
+
+        <div class="envelope e11" onclick="openReason(11,this)">
+            <span class="envelope-number">11</span>
+            <span class="envelope-label">Memories</span>
+        </div>
+
+        <div class="envelope e12" onclick="openReason(12,this)">
+            <span class="envelope-number">12</span>
+            <span class="envelope-label">Special Days</span>
+        </div>
+
+        <div class="envelope e13" onclick="openReason(13,this)">
+            <span class="envelope-number">13</span>
+            <span class="envelope-label">Just You</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONSTELLATION
+========================= -->
+
+<section id="constellationScreen" class="screen">
+
+    <div class="kicker">THE LITTLE THINGS ADD UP</div>
+
+    <h2 class="section-title">
+        Look what you <span>created</span> ✨
+    </h2>
+
+    <p class="section-desc">
+        Every little reason became a star.
+    </p>
+
+    <div class="constellation">
+
+        <svg viewBox="0 0 500 330">
+            <path d="M250 25 L155 70 L90 130 L140 180 L190 220 L220 280 L250 305 L280 280 L310 220 L360 180 L410 130 L345 70 Z"/>
+            <path d="M155 70 L345 70"/>
+            <path d="M90 130 L410 130"/>
+            <path d="M140 180 L360 180"/>
+            <path d="M190 220 L310 220"/>
+        </svg>
+
+        <span class="cstar cs1"></span>
+        <span class="cstar cs2"></span>
+        <span class="cstar cs3"></span>
+        <span class="cstar cs4"></span>
+        <span class="cstar cs5"></span>
+        <span class="cstar cs6"></span>
+        <span class="cstar cs7"></span>
+        <span class="cstar cs8"></span>
+        <span class="cstar cs9"></span>
+        <span class="cstar cs10"></span>
+        <span class="cstar cs11"></span>
+        <span class="cstar cs12"></span>
+        <span class="cstar cs13"></span>
+
+    </div>
+
+    <p class="section-desc">
+        13 reasons opened. One thing remains...
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section id="finalScreen" class="screen">
+
+    <div class="kicker">ONE LAST PAGE</div>
+
+    <h1 class="final-title">
+        You're simply<br>
+        <span>you.</span> ✨
+    </h1>
+
+    <p class="final-text">
+        13 reasons likhne ke baad bhi list complete nahi hui.
+        <br><br>
+        Because the best things about a person
+        aren't always things you can put into a list.
+        <br><br>
+        So bas itna —
+        thank you for being my crazy,
+        cute, annoying,
+        caring and completely irreplaceable
+        <b>bestiee.</b> 😂❤️
+    </p>
+
+    <div class="signature-big">
+        — Your Ariyal Pandey 🐼
+    </div>
+
+    <br>
+
+    <p class="section-desc">
+        P.S. Haan, tu gendi hai. 😂
+    </p>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     LETTER MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+    <div class="letter">
+
+        <button class="close" onclick="closeLetter()">×</button>
+
+        <div class="letter-number" id="letterNumber">
+            REASON 01
+        </div>
+
+        <h2 class="letter-title" id="letterTitle">
+            Your Respect
+        </h2>
+
+        <div class="letter-text" id="letterText"></div>
+
+        <div class="signature">
+            — Ariyal Pandey 🐼
+        </div>
+
+        <div class="special" id="specialBox"></div>
+
+    </div>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">
+    🎵
+</button>
+
+
+<script>
+
+/* =========================
+   STAR GENERATOR
+========================= */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<140;i++){
+
+    const s=document.createElement("span");
+
+    s.className="star";
+
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+
+    const size=Math.random()*2+1;
+
+    s.style.width=size+"px";
+    s.style.height=size+"px";
+
+    s.style.animationDelay=(Math.random()*4)+"s";
+    s.style.animationDuration=(2+Math.random()*4)+"s";
+
+    stars.appendChild(s);
+}
+
+
+/* =========================
+   AUDIO
+========================= */
+
+const bgMusic=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+
+let musicPlaying=false;
+
+function startMusic(){
+
+    bgMusic.volume=.35;
+
+    bgMusic.play()
+    .then(()=>{
+        musicPlaying=true;
+        musicBtn.textContent="🔊";
+    })
+    .catch(()=>{
+        console.log("Music waiting for browser permission");
+    });
+}
+
+function toggleMusic(){
+
+    if(bgMusic.paused){
+
+        bgMusic.play();
+
+        musicPlaying=true;
+        musicBtn.textContent="🔊";
+
+    }else{
+
+        bgMusic.pause();
+
+        musicPlaying=false;
+        musicBtn.textContent="🎵";
+    }
+}
+
+
+/* =========================
+   WEB AUDIO UI SOUNDS
+========================= */
+
+let audioCtx;
+
+function initAudio(){
+
+    if(!audioCtx){
+
+        audioCtx=
+            new(window.AudioContext||window.webkitAudioContext)();
+    }
+
+    if(audioCtx.state==="suspended"){
+        audioCtx.resume();
+    }
+}
+
+function tone(freq,duration,type="sine",volume=.04){
+
+    initAudio();
+
+    const osc=audioCtx.createOscillator();
+    const gain=audioCtx.createGain();
+
+    osc.type=type;
+    osc.frequency.value=freq;
+
+    gain.gain.setValueAtTime(volume,audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        audioCtx.currentTime+duration
+    );
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime+duration);
+}
+
+function clickSound(){
+
+    tone(700,.07,"sine",.035);
+}
+
+function envelopeSound(){
+
+    tone(420,.12,"triangle",.04);
+
+    setTimeout(()=>{
+        tone(620,.16,"triangle",.03);
+    },80);
+}
+
+function whooshSound(){
+
+    initAudio();
+
+    const osc=audioCtx.createOscillator();
+    const gain=audioCtx.createGain();
+
+    osc.type="sine";
+
+    osc.frequency.setValueAtTime(
+        180,
+        audioCtx.currentTime
+    );
+
+    osc.frequency.exponentialRampToValueAtTime(
+        800,
+        audioCtx.currentTime+.35
+    );
+
+    gain.gain.setValueAtTime(
+        .001,
+        audioCtx.currentTime
+    );
+
+    gain.gain.linearRampToValueAtTime(
+        .05,
+        audioCtx.currentTime+.08
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        .001,
+        audioCtx.currentTime+.4
+    );
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime+.4);
+}
+
+function successSound(){
+
+    tone(523,.18,"sine",.035);
+
+    setTimeout(()=>{
+        tone(659,.18,"sine",.035);
+    },100);
+
+    setTimeout(()=>{
+        tone(784,.3,"sine",.035);
+    },200);
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+function burst(x,y,count=20){
+
+    const emojis=["✨","💖","⭐","🌸","💫"];
+
+    for(let i=0;i<count;i++){
+
+        const p=document.createElement("div");
+
+        p.className="particle";
+
+        p.textContent=
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        p.style.left=x+"px";
+        p.style.top=y+"px";
+
+        p.style.setProperty(
+            "--x",
+            ((Math.random()-.5)*300)+"px"
+        );
+
+        p.style.setProperty(
+            "--y",
+            ((Math.random()-.5)*300)+"px"
+        );
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>{
+            p.remove();
+        },1600);
+    }
+}
+
+
+/* =========================
+   SCREEN CONTROL
+========================= */
+
+function showScreen(id){
+
+    document.querySelectorAll(".screen")
+        .forEach(s=>s.classList.remove("active"));
+
+    document.getElementById(id)
+        .classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================
+   ENTER
+========================= */
+
+function enterGift(){
+
+    initAudio();
+    clickSound();
+    startMusic();
+
+    showScreen("boxScreen");
+}
+
+
+/* =========================
+   OPEN BOX
+========================= */
+
+function openGiftBox(){
+
+    const gift=document.getElementById("gift");
+
+    clickSound();
+
+    gift.classList.add("opened");
+
+    const rect=gift.getBoundingClientRect();
+
+    setTimeout(()=>{
+
+        burst(
+            rect.left+rect.width/2,
+            rect.top+rect.height/2,
+            50
+        );
+
+        whooshSound();
+
+    },450);
+
+    setTimeout(()=>{
+
+        showScreen("reasonsScreen");
+
+    },1300);
+}
+
+
+/* =========================
+   REASONS
+========================= */
+
+const reasons={
+
+1:{
+title:"Your Respect",
+text:`Tum jis tarah meri baaton ko respect karti ho,
+wo honestly rare hai.
+
+Har relationship ya friendship mein
+sirf baat karna important nahi hota —
+samne wale ki feelings aur opinions ko
+samajhna bhi important hota hai.
+
+Aur ye quality tumhare andar hai.
+
+Isliye...
+Reason #1 — Your Respect. ❤️`,
+special:"Some people listen. You actually understand."
+},
+
+2:{
+title:"Tumhara Bachpana 😂",
+text:`Kabhi tum itni mature baatein karti ho
+aur kabhi suddenly full bachcha mode ON. 😂
+
+Tumhara ye random bachpana hi
+humari conversations ko boring nahi hone deta.
+
+Aur haan...
+kabhi-kabhi tu sach mein chhoti bacchi lagti hai. 😂`,
+special:"Officially certified: 50% bestie, 50% bachcha."
+},
+
+3:{
+title:"Tumhara Gussa 😂",
+text:`Tumhara gussa bhi ek alag hi character hai.
+
+Pehle:
+"😡"
+
+Phir thodi der baad:
+"🙂"
+
+Aur phir normal bakchodi. 😂
+
+Honestly, humari nok-jhok bhi
+humari story ka ek funny part ban chuki hai.`,
+special:"Gussa level: 100%. Duration: questionable. 😂"
+},
+
+4:{
+title:"Your Smile",
+text:`Tumhari smile kaafi simple cheez hai...
+
+but somehow mood better kar deti hai.
+
+Kabhi-kabhi ek chhoti si funny baat,
+ek random message,
+ya tumhari hasi
+poore boring day ko change kar deti hai.
+
+That's a pretty cool superpower.`,
+special:"Keep that smile. Seriously. ✨"
+},
+
+5:{
+title:"Our Pagalpanti",
+text:`Humari conversations ka koi normal version
+shayad exist hi nahi karta. 😂
+
+TU KUTTI
+→ TU KUTTA
+→ GENDI
+→ GENDA
+→ KAMINI
+→ KAMINA
+→ aur phir dono normal. 😂
+
+Ye chaos hi toh humari speciality hai.`,
+special:"Normal friendship? Never heard of it. 😂"
+},
+
+6:{
+title:"Those 4 AM Talks",
+text:`Jab almost poori duniya so rahi hoti thi...
+
+humari bakbak:
+"bas 5 minute aur."
+
+Aur pata chalta tha...
+4 AM. 😂
+
+Kuch conversations ka topic yaad nahi hota,
+but feeling yaad rehti hai.
+
+Those random late-night talks
+definitely deserve a place here.`,
+special:"4:00 AM — Still talking…"
+},
+
+7:{
+title:"Your Care",
+text:`Tum care karti ho.
+
+Kabhi directly,
+kabhi indirectly,
+kabhi daant ke. 😂
+
+But somewhere behind all that teasing,
+there's genuine care.
+
+Aur honestly,
+ye cheez bahut valuable hai.`,
+special:"Care doesn't always say 'I care'. Sometimes it says 'khana khaya?' 😂"
+},
+
+8:{
+title:"You Don't Give Up Easily",
+text:`Nok-jhok ho sakti hai.
+Arguments ho sakte hain.
+Mood off ho sakta hai.
+
+But tum har chhoti problem ke baad
+sab kuch throw away kar dene wali nahi ho.
+
+That quality matters.
+
+Because good connections aren't perfect —
+they're worth taking care of.`,
+special:"Not perfect. Just real."
+},
+
+9:{
+title:"You Understand Me",
+text:`Kabhi-kabhi mujhe khud nahi pata
+main kya bolna chahta hoon.
+
+But tum somehow samajh leti ho.
+
+Aur jab koi person
+tumhari silence,
+mood,
+randomness aur bakchodi
+sab tolerate + understand kar le...
+
+that's special. 😂`,
+special:"Translation: You somehow understand this weird guy. 😂"
+},
+
+10:{
+title:"Our Nicknames 😂",
+text:`DIVUUU
+BACHA
+GENDI
+BILLI JI
+GENDA
+AUR...
+ARIYAL PANDEY 🐼
+
+Normal names toh boring ho gaye hain.
+
+Humne apni hi dictionary bana li hai. 😂`,
+special:"Dictionary update pending..."
+},
+
+11:{
+title:"Our Memories",
+text:`Kuch dates calendar par
+sirf dates hoti hain.
+
+But kuch dates ke saath
+ek poori story attach ho jaati hai.
+
+13 JAN
+02 MAR
+03 MAR
+19 AUG
+
+Aur pata nahi future mein
+kitni aur random memories
+is list mein add hongi.`,
+special:"Some dates become memories. Some memories become stories."
+},
+
+12:{
+title:"You Make Things Special",
+text:`Tumhare saath har moment
+koi huge event hona zaroori nahi.
+
+Kabhi random conversation,
+kabhi stupid joke,
+kabhi fight,
+kabhi hasi...
+
+Ordinary moments bhi
+yaad reh jaate hain.
+
+And that's what makes them special.`,
+special:"The little moments usually become the big memories."
+},
+
+13:{
+title:"Just You ✨",
+text:`13 reasons likhne baitha tha.
+
+13 complete bhi kar diye.
+
+But honestly...
+
+list abhi bhi incomplete hai.
+
+Because kisi person ki value ko
+13 reasons mein completely explain
+thodi na kiya ja sakta hai.
+
+So final reason is simple:
+
+You're just you.
+
+Aur meri favourite bestiee
+aisi hi rehna. 😂❤️`,
+special:"13 reasons later... and the list is still incomplete."
+}
+
+};
+
+
+/* =========================
+   OPEN REASON
+========================= */
+
+let opened=0;
+
+function openReason(id,element){
+
+    if(element.classList.contains("opened")){
+        return;
+    }
+
+    clickSound();
+    envelopeSound();
+
+    element.classList.add("opened");
+
+    opened++;
+
+    document.getElementById("counter")
+        .textContent=opened;
+
+    const data=reasons[id];
+
+    document.getElementById("letterNumber")
+        .textContent="REASON "+String(id).padStart(2,"0");
+
+    document.getElementById("letterTitle")
+        .textContent=data.title;
+
+    document.getElementById("letterText")
+        .textContent="";
+
+    document.getElementById("specialBox")
+        .textContent=data.special;
+
+    document.getElementById("modal")
+        .classList.add("show");
+
+    typeWriter(data.text);
+
+    burst(
+        window.innerWidth/2,
+        window.innerHeight/2,
+        16
+    );
+
+    if(id===13){
+
+        setTimeout(()=>{
+            successSound();
+        },500);
+    }
+}
+
+
+/* =========================
+   TYPEWRITER
+========================= */
+
+function typeWriter(text){
+
+    const box=document.getElementById("letterText");
+
+    let i=0;
+
+    const timer=setInterval(()=>{
+
+        box.textContent+=text.charAt(i);
+
+        i++;
+
+        if(i>=text.length){
+            clearInterval(timer);
+        }
+
+    },18);
+}
+
+
+/* =========================
+   CLOSE LETTER
+========================= */
+
+function closeLetter(){
+
+    document.getElementById("modal")
+        .classList.remove("show");
+
+    clickSound();
+
+    if(opened===13){
+
+        setTimeout(()=>{
+            showConstellation();
+        },500);
+    }
+}
+
+
+/* =========================
+   CONSTELLATION
+========================= */
+
+function showConstellation(){
+
+    showScreen("constellationScreen");
+
+    const stars=document
+        .querySelectorAll(".cstar");
+
+    stars.forEach((star,i)=>{
+
+        setTimeout(()=>{
+            star.classList.add("on");
+            tone(
+                400+i*35,
+                .15,
+                "sine",
+                .025
+            );
+        },i*150);
+
+    });
+
+    setTimeout(()=>{
+
+        burst(
+            window.innerWidth/2,
+            window.innerHeight/2,
+            45
+        );
+
+    },2200);
+
+    setTimeout(()=>{
+
+        showScreen("finalScreen");
+
+    },4200);
+}
+
+
+/* =========================
+   CLOSE MODAL OUTSIDE
+========================= */
+
+document.getElementById("modal")
+.addEventListener("click",function(e){
+
+    if(e.target===this){
+        closeLetter();
+    }
+
+});
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key==="Escape"){
+        closeLetter();
+    }
+
+});
+
+
+/* =========================
+   INITIAL BUTTON STATE
+========================= */
+
+musicBtn.style.opacity=".8";
+
+</script>
+
+</body>
+  </html>
